@@ -28,10 +28,10 @@ export default function SlickFilms() {
         </ul>
         <div className="tab-content">
           <div className="tab-pane fade show active" id="home-movie">
-            <SlickCarousel maNhom="GP01" />
+            <SlickCarousel />
           </div>
           <div className="tab-pane fade" id="upcoming-movie">
-            <SlickCarousel maNhom="GP01" />
+            <SlickCarousel />
           </div>
         </div>
       </div>

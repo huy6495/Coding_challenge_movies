@@ -45,12 +45,12 @@ export default function Detail(props) {
                 <h5 className="card-title">Overview:</h5>
                 <p className="card-text">{detailMovie.overview}</p>
                 <div className="info card-body mt-3">
-                  <small>Phạm vi: </small>
+                  <small>Genres: </small>
                   <span className="nameFilm">
                     <span>C16</span>
                   </span>
                   <br />
-                  <span className="timeFilm">Thời lượng: 100p</span>
+                  <span className="timeFilm">Time: 100m</span>
                 </div>
               </div>
             </div>

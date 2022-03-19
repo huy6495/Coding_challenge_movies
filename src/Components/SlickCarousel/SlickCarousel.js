@@ -20,13 +20,15 @@ export default function SlickCarousel(props) {
     (state) => state.MovieReducer
   );
 
+  // console.log(isRefresh);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     const action = getListMovies();
     dispatch(action);
     return () => {};
-  }, []);
+  }, [isLoadingSlider]);
 
   //customize arrow carousel
   function SamplePrevArrow(props) {

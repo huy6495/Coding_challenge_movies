@@ -13,7 +13,7 @@ export const getListMovies = (page = 1) => {
         url: `${DOMAIN}now_playing?api_key=${api_key}&language=en-US&page=${page}`,
       });
 
-      // const apiArrayMovies = await result.data.results;
+      // await console.log(result.data);
 
       const arrayMovie = await convertArrayMovies(result.data.results);
 

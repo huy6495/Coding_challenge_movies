@@ -5,14 +5,17 @@ import {
   ReleaseContent,
   RefreshContent,
 } from "react-js-pull-to-refresh";
+import { useDispatch } from "react-redux";
 import Carousel from "../../Components/Carousel/Carousel";
 import FilmBlock from "../../Components/FilmBlock/FilmBlock";
 import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
 
 export default function Home() {
+  const dispatch = useDispatch();
+
   const onRefresh = async () => {
-    return await window.location.reload();
+    return await dispatch({ type: "REFRESH_LIST" });
   };
   return (
     <div style={{ overflow: "scroll" }}>

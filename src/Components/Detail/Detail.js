@@ -19,7 +19,7 @@ export default function Detail(props) {
   useEffect(() => {
     dispatch(getDetailMovie(id));
     return () => {};
-  }, []);
+  }, [isLoadingDetail]);
 
   return (
     <>

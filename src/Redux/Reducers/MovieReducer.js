@@ -25,6 +25,18 @@ export const MovieReducer = (state = initialState, action) => {
     case "HIDE_LOADING_LIST": {
       return { ...state, isLoadingSlider: false };
     }
+
+    case "REFRESH_LIST": {
+      let { isLoadingSlider, isLoadingDetail } = state;
+
+      if (!isLoadingSlider) {
+        return { ...state, isLoadingSlider: true };
+      }
+
+      if (!isLoadingDetail) {
+        return { ...state, isLoadingDetail: true };
+      }
+    }
     default:
       return state;
   }

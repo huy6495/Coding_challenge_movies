@@ -1,6 +1,11 @@
 const initialState = {
   arrayMovies: [],
+
   detailMovie: {},
+
+  isLoadingSlider: true,
+
+  isLoadingDetail: true,
 };
 
 export const MovieReducer = (state = initialState, action) => {
@@ -13,6 +18,13 @@ export const MovieReducer = (state = initialState, action) => {
       return { ...state, detailMovie: action.detailMovie };
     }
 
+    case "HIDE_LOADING_DETAIL": {
+      return { ...state, isLoadingDetail: false };
+    }
+
+    case "HIDE_LOADING_LIST": {
+      return { ...state, isLoadingSlider: false };
+    }
     default:
       return state;
   }

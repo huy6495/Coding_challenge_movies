@@ -2,7 +2,7 @@ import React from "react";
 import SlickCarousel from "../SlickCarousel/SlickCarousel";
 import "./_filmBlock.scss";
 
-export default function SlickFilms() {
+export default function FilmBlock() {
   return (
     <div id="homeMovies" className="container text-center">
       <div className="col-xs-12 block mainMaxWidth">

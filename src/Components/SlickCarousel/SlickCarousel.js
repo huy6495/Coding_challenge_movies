@@ -13,12 +13,12 @@ import { NavLink } from "react-router-dom";
 //import imgs
 import back from "../../Assets/Img/back-session.png";
 import next from "../../Assets/Img/next-session.png";
-import { IMAGE_DOMAIN } from "../../Utils/setting";
+import Loading from "../Loading/Loading";
 
 export default function SlickCarousel(props) {
-  const { arrayMovies } = useSelector((state) => state.MovieReducer);
-  // console.log(arrayMovies[0].id);
-  // const { isLoadingSlider } = useSelector((state) => state.LoadingReducer);
+  const { arrayMovies, isLoadingSlider } = useSelector(
+    (state) => state.MovieReducer
+  );
 
   const dispatch = useDispatch();
 
@@ -69,7 +69,7 @@ export default function SlickCarousel(props) {
           <NavLink to={`/detail/${movie.id}`}>
             <div className="img-movie">
               <img
-                src={IMAGE_DOMAIN + movie.poster_path}
+                src={movie.poster_path}
                 className="card-img-top"
                 style={{ height: "320px" }}
                 alt={movie.original_title}
@@ -115,10 +115,11 @@ export default function SlickCarousel(props) {
 
   return (
     <div style={{ maxHeight: "760px" }}>
-      {/* {isLoadingSlider ? (
+      {isLoadingSlider ? (
         <Loading size="300px" />
-      ) : */}
-      <Slider {...settings1}>{renderCardPhim(arrayMovies)}</Slider>
+      ) : (
+        <Slider {...settings1}>{renderCardPhim(arrayMovies)}</Slider>
+      )}
     </div>
   );
 }

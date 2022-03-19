@@ -64,6 +64,14 @@
   color: $primaryColor;
 }
 
+.text-card {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* number of lines to show */
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
 @media only screen and (max-width: 768px) {
   .score-detail {
     opacity: 0;

@@ -67,11 +67,12 @@
     @include for-size(phone) {
       width: 10%;
     }
-    .language {
-      @include for-size(phone) {
+    .pull-btn {
+      @include for-size(tablet) {
         display: none !important;
       }
       margin-right: 10%;
+      margin-bottom: 7%;
     }
     .auth {
       width: 20%;

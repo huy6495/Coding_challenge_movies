@@ -36,8 +36,8 @@ export default function Header() {
           </ul>
         </nav>
         <div className="right-header d-flex justify-content-right">
-          <div className="language">
-            <FontAwesomeIcon icon={solid("globe")} />
+          <div className="pull-btn">
+            <div id="basic-label">Pull To Refresh</div>
           </div>
           <div className="auth">
             <button>

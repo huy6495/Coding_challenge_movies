@@ -26,6 +26,9 @@ export const getListMovies = (page = 1) => {
 
       await dispatch({ type: "HIDE_LOADING_LIST" });
     } catch (err) {
+      if (err.message === "Network Error") {
+        alert("Internet disconnected");
+      }
       console.log(err);
     }
   };
@@ -52,6 +55,9 @@ export const getDetailMovie = (productID = 550) => {
 
       await dispatch({ type: "HIDE_LOADING_DETAIL" });
     } catch (err) {
+      if (err.message === "Network Error") {
+        alert("Internet disconnected");
+      }
       console.log(err);
     }
   };

@@ -2,13 +2,13 @@
 
 **Movies** is a movies app using the [The Movie Database API](https://developers.themoviedb.org/3).
 
-Time spent: **HH** hours spent in total
+Time spent: **48** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-- [ ] User can view a list of movies currently playing in theaters. Poster images load asynchronously.
+- [1] User can view a list of movies currently playing in theaters. Poster images load asynchronously.
 - [ ] User can view movie details by tapping on a cell.
 - [ ] User sees loading state while waiting for the API.
 - [ ] User sees an error message when there is a network error.

@@ -1,11 +1,11 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import reduxThunk from "redux-thunk";
-import { ProductReducer } from "./Reducers/ProductReducer";
+import { MovieReducer } from "./Reducers/MovieReducer";
 import { UserReducer } from "./Reducers/UserReducer";
 
 const rootReducer = combineReducers({
   //Reducers put here
-  ProductReducer,
+  MovieReducer,
   UserReducer,
 });
 

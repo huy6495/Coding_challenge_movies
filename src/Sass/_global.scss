@@ -1,2 +1,33 @@
-@import url(./_mixins.scss);
-@import url(./_variables.scss);
+@import "./mixins";
+@import "./variables";
+
+@for $i from 1 through 20 {
+  .w#{$i*5} {
+    width: #{$i * 5%};
+  }
+}
+
+$breakpoints: (
+  phone-sm: 420px,
+  phone: 767px,
+  tablet: 768px,
+  tablet-lg: 1024px,
+  desktop: 1025px,
+  desktop-xl: 1920px,
+  desktop-lg: 1600px,
+);
+
+//Mixin for responsive
+@mixin for-size($breakpoint) {
+  //Kiểm tra breakpoint truyền vào có tồn tại như bạn đã định nghĩa hay không.
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Lấy giá trị pixel breakpoint đó
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    //Build media query tự động
+    @media (max-width: $breakpoint-value) {
+      //Những gì bạn mong muốn sẽ được lồng vào @content
+      @content;
+    }
+  }
+}

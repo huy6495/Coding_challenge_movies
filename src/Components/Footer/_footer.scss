@@ -1,0 +1,33 @@
+@import "../../Sass/global";
+
+footer {
+  max-width: 100%;
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 0;
+  background-color: $primaryColor;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  .wrap-footer {
+    margin-top: 30px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    div {
+      color: white;
+      li {
+        list-style: none;
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+  .join {
+    text-align: right;
+    right: 0;
+  }
+}

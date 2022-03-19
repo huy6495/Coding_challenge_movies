@@ -1,0 +1,113 @@
+@import "../../Sass/global";
+
+.header {
+  height: 80px;
+  background-color: $primaryColor;
+  color: white;
+  display: flex;
+  .wrap-header {
+    @include for-size(phone) {
+      width: 90%;
+      justify-content: space-between;
+    }
+    width: 80%;
+    display: flex;
+    justify-content: center;
+
+    .logo {
+      width: 20%;
+      margin: auto 0;
+    }
+  }
+  .wrap-nav {
+    margin: auto;
+    width: 37%;
+    @include for-size(phone) {
+      display: none !important;
+    }
+    ul {
+      margin: auto;
+      padding: 0;
+      list-style: none;
+      .parent-drop {
+        position: relative;
+        display: inline-block;
+        .drop-button {
+          p {
+            margin: 2px;
+            padding: 2px 5px;
+            border: 1px solid $primaryColor;
+            cursor: pointer;
+            margin-bottom: 0;
+            position: relative;
+          }
+          p::after {
+            background-color: white;
+            border-radius: 1px;
+            bottom: 0;
+            content: "";
+            height: 2px;
+            width: 2px;
+            left: 50%;
+            margin-left: -9px;
+            position: absolute;
+            transition: 0.7s;
+          }
+          p:hover::after {
+            width: 18px;
+          }
+        }
+
+        // .dropdown-content {
+        //   display: none;
+        //   position: absolute;
+
+        //   background-color: #f1f1f1;
+        //   min-width: 120px;
+        //   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        //   z-index: 1;
+        //   a {
+        //     color: $primaryColor;
+        //     padding: 12px 16px;
+        //     text-decoration: none;
+        //     display: block;
+        //   }
+        //   a:hover {
+        //     background-color: #ddd;
+        //   }
+        // }
+      }
+      // .parent-drop:hover .dropdown-content {
+      //   display: block;
+      // }
+    }
+  }
+  .right-header {
+    width: 25%;
+    margin: auto 0;
+    justify-content: right;
+    @include for-size(phone) {
+      width: 10%;
+    }
+    .language {
+      @include for-size(phone) {
+        display: none !important;
+      }
+      margin-right: 10%;
+    }
+    .auth {
+      width: 20%;
+      margin: auto 9px;
+      button {
+        border-radius: 30px;
+        display: flex;
+        border: none;
+        justify-content: center;
+        padding: 3px;
+        svg {
+          margin: 4px 5px;
+        }
+      }
+    }
+  }
+}

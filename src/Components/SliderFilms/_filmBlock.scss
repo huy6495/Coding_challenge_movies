@@ -1,0 +1,50 @@
+@import "../../Sass/global";
+
+#homeMovies {
+  padding-top: 55px;
+  margin-bottom: 120px;
+}
+
+.nav-tabs {
+  justify-content: center;
+  border: none;
+  margin-bottom: 30px;
+}
+
+.navCenter li.active button {
+  font-size: 24px;
+}
+
+.navCenter button {
+  font-size: 20px;
+  line-height: 24px;
+  height: 24px;
+}
+
+.nav-tabs.navCenter li button {
+  color: $secondaryColor !important;
+}
+
+.nav-tabs.navCenter li button {
+  background-color: transparent;
+  border: none;
+  color: #000;
+  transition: all 0.2s;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#homeMovies .navCenter button:hover {
+  font-size: 22px;
+}
+
+.nav-tabs .nav-link.active {
+  color: $primaryColor !important;
+  font-size: 22px;
+}
+
+@media only screen and(max-width: 768px) {
+  .nav-tabs.navCenter li button {
+    font-size: 15px;
+  }
+}

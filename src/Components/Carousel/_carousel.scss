@@ -1,0 +1,35 @@
+@import "../../Sass/global";
+
+.wrap-carousel {
+  @include for-size(tablet) {
+    min-height: 350px;
+  }
+  @include for-size(phone) {
+    min-height: 320px;
+  }
+  background-color: $secondaryColor;
+  min-height: 400px;
+  .inside-carousel {
+    @include for-size(tablet) {
+      padding: 40px 40px;
+    }
+    @include for-size(phone) {
+      padding: 10px 10px;
+      h1,
+      h2 {
+        font-size: 25px;
+      }
+    }
+    background-image: url(../../Assets/Img/search-background.jpeg);
+    margin: auto;
+    width: 85%;
+    padding: 80px 80px;
+    // background: $primaryColor;
+    border-radius: 20px;
+    button {
+      border-color: white;
+      background-color: $secondaryColor;
+      color: white;
+    }
+  }
+}

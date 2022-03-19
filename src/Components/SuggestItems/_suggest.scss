@@ -1,0 +1,26 @@
+.wrap-parent {
+  //   display: flex;
+  margin-top: 50px;
+  h2 {
+    width: 90%;
+    font-size: 40px;
+    margin: 30px auto;
+  }
+  .wrap-child {
+    width: 90%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    .item:first-child {
+      margin-left: 0;
+    }
+    .item:last-child {
+      margin-right: 0;
+    }
+    .item {
+      margin: 0 auto;
+      max-width: 25%;
+      cursor: pointer;
+    }
+  }
+}

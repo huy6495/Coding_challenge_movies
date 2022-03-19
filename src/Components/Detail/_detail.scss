@@ -1,0 +1,77 @@
+@import "../../Sass/global";
+
+.detail-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 500px;
+  width: 80%;
+}
+
+.detail-movie {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0));
+}
+.detail-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.6;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.detail-card > div {
+  margin: 140px 0px;
+  border-radius: 0;
+  border: none;
+}
+
+.detail-content {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: top;
+  height: 100%;
+  color: $secondaryColor;
+}
+
+.content-detail {
+  padding: 50px;
+}
+.wrap-detail {
+  max-height: 370px;
+}
+
+.wrap-detail-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.w-h-100 {
+  width: 100%;
+  height: 100%;
+}
+
+.card-title {
+  color: $primaryColor;
+}
+
+@media only screen and (max-width: 768px) {
+  .score-detail {
+    opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .content-detail {
+    display: none;
+  }
+}

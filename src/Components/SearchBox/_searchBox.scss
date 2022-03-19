@@ -1,0 +1,68 @@
+@import "../../Sass/global";
+
+.wrap-search {
+  // background-color: $secondaryColor;
+  padding: 20px 0;
+
+  .wrap-search-in {
+    @include for-size(phone) {
+      display: flex;
+      // max-width: 200px !important;
+      justify-content: center;
+    }
+  }
+  form {
+    width: 80%;
+    .form-search-first {
+      @include for-size(phone) {
+        font-size: 10px;
+      }
+      height: 62px;
+      background-color: white;
+      margin-bottom: 0;
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
+      padding-left: 20px;
+      padding-right: 10px;
+      font-size: 14px;
+
+      input {
+        min-width: 250px;
+        &:focus {
+          outline: none !important;
+        }
+        @include for-size(phone) {
+          min-width: 130px;
+        }
+      }
+
+      // .border-search {
+      //   align-self: center;
+      //   border-right: 1px solid #dddddd;
+      //   height: 32px;
+      // }
+    }
+    .form-search-n {
+      @extend .form-search-first;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
+    .form-search-end {
+      @extend .form-search-first;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-top-right-radius: 50px;
+      border-bottom-right-radius: 50px;
+      .icon-search {
+        background-color: $primaryColor;
+        border-radius: 50%;
+        margin: 0rem;
+      }
+    }
+  }
+}
+
+.input-search {
+  color: #222222;
+  border: none;
+}

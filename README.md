@@ -29,12 +29,13 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [✓] Back to top.
+- [✓] Scroll to parts.
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-> Please record screen to a GIF file and attach link here
+> https://imgur.com/Qzw45BA
 
 ## License
 

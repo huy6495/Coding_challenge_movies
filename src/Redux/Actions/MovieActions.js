@@ -12,12 +12,9 @@ export const getListMovies = (page = 1) => {
         method: "GET",
         url: `${DOMAIN}now_playing?api_key=${api_key}&language=en-US&page=${page}`,
       });
-
-      // await console.log(result.data);
+      if (result.status !== 200) throw new Error("Internet disconnected!");
 
       const arrayMovie = await convertArrayMovies(result.data.results);
-
-      // await console.log(arrayMovie);
 
       await dispatch({
         type: "SET_LIST_MOVIE",
@@ -26,10 +23,11 @@ export const getListMovies = (page = 1) => {
 
       await dispatch({ type: "HIDE_LOADING_LIST" });
     } catch (err) {
-      if (err.message === "Network Error") {
-        alert("Internet disconnected");
+      if (err) {
+        alert(err);
+        console.log(err);
+        return;
       }
-      console.log(err);
     }
   };
 };

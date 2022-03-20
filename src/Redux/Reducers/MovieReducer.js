@@ -6,6 +6,8 @@ const initialState = {
   isLoadingSlider: true,
 
   isLoadingDetail: true,
+
+  isRefresh: false,
 };
 
 export const MovieReducer = (state = initialState, action) => {
@@ -29,13 +31,11 @@ export const MovieReducer = (state = initialState, action) => {
     case "REFRESH_LIST": {
       let { isLoadingSlider, isLoadingDetail } = state;
 
-      if (!isLoadingSlider) {
-        return { ...state, isLoadingSlider: true };
-      }
-
-      if (!isLoadingDetail) {
-        return { ...state, isLoadingDetail: true };
-      }
+      return {
+        ...state,
+        isLoadingSlider: !isLoadingSlider,
+        isLoadingDetail: !isLoadingDetail,
+      };
     }
     default:
       return state;

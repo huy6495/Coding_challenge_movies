@@ -66,3 +66,12 @@
   color: #222222;
   border: none;
 }
+.result-search {
+  background: white;
+  border: solid 1px $primaryColor;
+  padding-left: 10px;
+  min-width: 220px;
+  font-size: 15px;
+  margin: 0;
+  z-index: 1;
+}

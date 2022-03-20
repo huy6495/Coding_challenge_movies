@@ -6,6 +6,7 @@
   display: flex;
   font-weight: 700;
   margin-bottom: 16px;
+  z-index: -1;
 }
 .toggle:last-of-type {
   margin: 0;

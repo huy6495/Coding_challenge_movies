@@ -22,8 +22,6 @@ export default function ButtonGrid() {
         </span>
         More detail grid view
       </label>
-
-      {/* <span className="slider round" /> */}
     </div>
   );
 }

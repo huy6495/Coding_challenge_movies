@@ -33,7 +33,7 @@ export default function DetailPageChild(props) {
       >
         <div id="basic-container">
           <Header />
-          <Detail />
+          <Detail id={props.match.params.id} />
           <Footer />
         </div>
         <style>{`

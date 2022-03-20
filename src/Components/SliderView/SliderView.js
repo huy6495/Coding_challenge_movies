@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import Slider from "react-slick";
 // import PlayButton from "../PlayButton/PlayButton";
 
-//import action to middleware
-import { getListMovies } from "../../Redux/Actions/MovieActions";
 import { NavLink } from "react-router-dom";
 
 //import imgs
@@ -93,8 +91,6 @@ const settings2 = {
 
 export default function SliderView(props) {
   const { gridView } = useSelector((state) => state.UserReducer);
-
-  console.log(gridView);
 
   const { arrayMovies } = props;
 

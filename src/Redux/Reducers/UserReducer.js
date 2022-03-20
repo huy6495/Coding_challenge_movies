@@ -1,33 +1,20 @@
-let nameLogin = null;
-if (localStorage.getItem("userLogin")) {
-  // console.log(localStorage.getItem("userLogin"));
-  let userLogin = JSON.parse(localStorage.getItem("userLogin"));
-  nameLogin = userLogin.username;
-}
-
 const stateDefault = {
-  userLogin: nameLogin,
-  reDirect: false,
   gridView: false,
+
+  arraySearchName: [],
 };
 
 export const UserReducer = (state = stateDefault, action) => {
   switch (action.type) {
-    case "SUCCESSFULLY_LOGIN": {
-      state.userLogin = action.userLogin;
-      state.reDirect = true;
+    case "SET_GRID_VIEW": {
+      const { gridView } = state;
+      state.gridView = !gridView;
       return { ...state };
     }
 
-    case "SET_REDIRECT": {
-      state.reDirect = false;
-      return { ...state };
-    }
-    case "SET_GRID_VIEW": {
-      const { gridView } = state;
-      // console.log(gridView);
-      state.gridView = !gridView;
-      return { ...state };
+    case "SET_SEARCH": {
+      // console.log(action.arraySearchName);
+      return { ...state, arraySearchName: action.arraySearchName };
     }
     default: {
       return { ...state };

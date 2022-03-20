@@ -9,7 +9,7 @@ export default function ButtonGrid() {
     dispatch({ type: "SET_GRID_VIEW" });
   };
   return (
-    <div className="d-flex justify-content-center mt-5 mb-3">
+    <div id="movies" className="d-flex justify-content-center btn-grid mb-3">
       <label className="toggle" htmlFor="uniqueID">
         <input
           type="checkbox"

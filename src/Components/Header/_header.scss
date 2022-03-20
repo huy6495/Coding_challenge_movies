@@ -33,15 +33,17 @@
         position: relative;
         display: inline-block;
         .drop-button {
-          p {
+          a {
             margin: 2px;
             padding: 2px 5px;
             border: 1px solid $primaryColor;
             cursor: pointer;
             margin-bottom: 0;
             position: relative;
+            text-decoration: none;
+            color: white;
           }
-          p::after {
+          a::after {
             background-color: white;
             border-radius: 1px;
             bottom: 0;
@@ -53,7 +55,7 @@
             position: absolute;
             transition: 0.7s;
           }
-          p:hover::after {
+          a:hover::after {
             width: 45px;
           }
         }

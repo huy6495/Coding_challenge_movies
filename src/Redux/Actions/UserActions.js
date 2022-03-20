@@ -13,7 +13,7 @@ export const searchMovie = (param) => {
 
       await dispatch({
         type: "SET_SEARCH",
-        arraySearchName: result.data.results.slice(0, 9),
+        arraySearchName: result.data.results.slice(0, 7),
       });
     } catch (errors) {
       if (errors.response?.data.errors[0]) {

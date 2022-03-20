@@ -18,7 +18,7 @@ export default function SearchBox() {
   const renderSearchResult = (arrayResult) => {
     if (arrayResult.length !== 0) {
       return arrayResult.map((item, index) => {
-        console.log(item.id);
+        // console.log(item.id);
         return (
           <NavLink key={index} to={`/detail/${item.id}`}>
             <p className="result-search">{item.title}</p>
@@ -29,7 +29,10 @@ export default function SearchBox() {
     return "";
   };
   return (
-    <div className="wrap-search d-flex justify-content-center">
+    <div
+      id="searchMovies"
+      className="wrap-search d-flex justify-content-center"
+    >
       <div className="d-flex justify-content-center wrap-search-in">
         <form className="d-flex justify-content-center">
           {/* 1. */}

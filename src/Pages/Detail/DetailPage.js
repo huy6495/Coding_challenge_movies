@@ -8,6 +8,7 @@ import {
 import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
 import Detail from "../../Components/Detail/Detail";
+import ToTopBtn from "../../Components/ToTopBnt/ToTopBtn";
 
 export default function DetailPageChild(props) {
   useEffect(() => {
@@ -35,6 +36,7 @@ export default function DetailPageChild(props) {
           <Header />
           <Detail id={props.match.params.id} />
           <Footer />
+          <ToTopBtn />
         </div>
         <style>{`
                     

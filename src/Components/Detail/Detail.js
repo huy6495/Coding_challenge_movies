@@ -36,7 +36,7 @@ export default function Detail(props) {
           <div className="container detail-card">
             <div className="card">
               <div className="row g-0 wrap-detail">
-                <div className="col-md-3 img-movie p-0">
+                <div className="col-xl-3 col-md-5 img-movie p-0">
                   <div className="wrap-detail-img">
                     <img
                       src={IMAGE_DOMAIN + detailMovie.poster_path}
@@ -46,7 +46,7 @@ export default function Detail(props) {
                   </div>
                 </div>
 
-                <div className="col-md-6 detail-content d-flex justify-content-center overflow-auto c">
+                <div className="col-xl-6 col-md-7 detail-content d-flex justify-content-center overflow-auto c">
                   <div className="card-body content-detail">
                     <h3 className="card-title text-center">
                       {detailMovie.title}
@@ -66,7 +66,7 @@ export default function Detail(props) {
                   </div>
                 </div>
 
-                <div className="col-md-3 score-detail">
+                <div className="col-xl-3 score-detail">
                   <div className="row">
                     <div className="col-md-12 mt-5 d-flex justify-content-center ">
                       <CirclePercent percent={detailMovie.vote_average * 10} />

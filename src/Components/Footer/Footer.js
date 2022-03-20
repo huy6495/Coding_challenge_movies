@@ -14,7 +14,7 @@ export default function Footer() {
             height={94}
           />
         </div>
-        <div>
+        <div className="content-footer">
           <h3>The Basics</h3>
           <ul>
             <li>
@@ -34,7 +34,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div>
+        <div className="content-footer">
           <h3>Get Involved</h3>
           <ul>
             <li>
@@ -51,7 +51,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div>
+        <div className="content-footer">
           <h3>Legal</h3>
           <ul>
             <li>

@@ -11,6 +11,7 @@ import Carousel from "../../Components/Carousel/Carousel";
 import FilmBlock from "../../Components/FilmBlock/FilmBlock";
 import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
+import ToTopBtn from "../../Components/ToTopBnt/ToTopBtn";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -38,6 +39,8 @@ export default function Home() {
           <FilmBlock />
 
           <Footer />
+
+          <ToTopBtn />
         </div>
         <style>{`
                     

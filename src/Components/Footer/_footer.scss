@@ -16,7 +16,10 @@ footer {
     width: 80%;
     display: flex;
     justify-content: space-between;
-    div {
+    .content-footer {
+      @include for-size(tablet) {
+        display: none;
+      }
       color: white;
       li {
         list-style: none;

@@ -1,12 +1,16 @@
 @import "../../Sass/global";
 
+.btn-grid {
+  margin-top: 6.5rem;
+}
+
 .toggle {
   align-items: center;
   border-radius: 100px;
   display: flex;
   font-weight: 700;
   margin-bottom: 16px;
-  z-index: -1;
+  // z-index: -1;
 }
 .toggle:last-of-type {
   margin: 0;

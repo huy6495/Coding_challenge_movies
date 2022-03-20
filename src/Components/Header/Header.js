@@ -3,34 +3,47 @@ import "./_header.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import SgvLogo from "../SvgLogo/SvgLogo";
+import Link from "react-scroll/modules/components/Link";
+import { NavLink, useHistory } from "react-router-dom";
 
 export default function Header() {
+  const path = useHistory().location.pathname;
+
   return (
     <header className="header d-flex justify-content-center">
       <div className="wrap-header d-flex">
         <div className="logo">
-          <SgvLogo />
+          <NavLink to="/home">
+            <SgvLogo />
+          </NavLink>
         </div>
         <nav className="wrap-nav d-flex">
           <ul className="d-flex">
             <div className="parent-drop">
               <div className="drop-button">
-                <p>Movies</p>
-              </div>
-              {/* <div className="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-              </div> */}
-            </div>
-            <div className="parent-drop">
-              <div className="drop-button">
-                <p>About</p>
+                {path === "/" || path === "/home" ? (
+                  <Link to="movies" spy={true} smooth={true} duration={1000}>
+                    Movies
+                  </Link>
+                ) : (
+                  <NavLink to="/home">Movies</NavLink>
+                )}
               </div>
             </div>
             <div className="parent-drop">
               <div className="drop-button">
-                <p>Top rated</p>
+                {path === "/" || path === "/home" ? (
+                  <Link
+                    to="searchMovies"
+                    spy={true}
+                    smooth={true}
+                    duration={1000}
+                  >
+                    Search
+                  </Link>
+                ) : (
+                  <NavLink to="/home">Search</NavLink>
+                )}
               </div>
             </div>
           </ul>

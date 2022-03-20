@@ -1,7 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import Slider from "react-slick";
-// import PlayButton from "../PlayButton/PlayButton";
+import { useViewport } from "react-viewport-hooks";
+import LazyLoad from "react-lazyload";
 
 import { NavLink } from "react-router-dom";
 
@@ -45,11 +46,10 @@ const settings1 = {
   infinite: true,
   speed: 2500,
   slidesToShow: 2,
-  slidesToScroll: 3,
+  slidesToScroll: 2,
   autoplay: false,
   rows: 2,
   slidesPerRow: 2,
-  autoplaySpeed: 4600,
   nextArrow: <SampleNextArrow right="-50px" top="50%" />,
   prevArrow: <SamplePrevArrow left="-50px" top="50%" />,
   responsive: [
@@ -69,19 +69,19 @@ const settings2 = {
   infinite: true,
   speed: 2500,
   slidesToShow: 1,
-  slidesToScroll: 3,
+  slidesToScroll: 2,
   autoplay: false,
   rows: 1,
   slidesPerRow: 2,
-  autoplaySpeed: 4600,
   nextArrow: <SampleNextArrow right="-50px" top="50%" />,
   prevArrow: <SamplePrevArrow left="-50px" top="50%" />,
   responsive: [
     {
       breakpoint: 768,
       settings: {
+        slidesPerRow: 1,
         slidesToShow: 1,
-        slidesToScroll: 2,
+        slidesToScroll: 1,
         nextArrow: <SampleNextArrow right="-20px" top="45%" />,
         prevArrow: <SamplePrevArrow left="-20px" top="45%" />,
       },
@@ -92,38 +92,45 @@ const settings2 = {
 export default function SliderView(props) {
   const { gridView } = useSelector((state) => state.UserReducer);
 
+  // const useViewport = useInViewport();
+
+  const { vw } = useViewport();
+  // console.log(vw);
+
   const { arrayMovies } = props;
 
   const renderCardPhim = (array, heightImage = "320px") => {
     return array.map((movie, index) => (
-      <div key={index} className="container my-2">
-        <div className="card custom-card">
-          <NavLink to={`/detail/${movie.id}`}>
-            <div className="img-movie">
-              {heightImage === "550px" ? (
-                <span className="content-in-img">{movie.overview}</span>
-              ) : (
-                ""
-              )}
+      <LazyLoad key={index}>
+        <div className="container my-2">
+          <div className="card custom-card">
+            <NavLink to={`/detail/${movie.id}`}>
+              <div className="img-movie">
+                {heightImage === "550px" ? (
+                  <span className="content-in-img">{movie.overview}</span>
+                ) : (
+                  ""
+                )}
 
-              <img
-                src={movie.poster_path}
-                className="card-img-top"
-                style={{ height: heightImage }}
-                alt={movie.original_title}
-              />
+                <img
+                  src={movie.poster_path}
+                  className="card-img-top"
+                  style={{ height: heightImage }}
+                  alt={movie.original_title}
+                />
+              </div>
+            </NavLink>
+
+            <div className="info card-body">
+              <p className="nameFilm">
+                <span>P</span>
+                {movie.original_title}
+              </p>
+              <span className="timeFilm">Score: {movie.vote_average}</span>
             </div>
-          </NavLink>
-
-          <div className="info card-body">
-            <p className="nameFilm">
-              <span>P</span>
-              {movie.original_title}
-            </p>
-            <span className="timeFilm">Score: {movie.vote_average}</span>
           </div>
         </div>
-      </div>
+      </LazyLoad>
     ));
   };
 
@@ -132,7 +139,9 @@ export default function SliderView(props) {
       {gridView ? (
         <Slider {...settings2}>{renderCardPhim(arrayMovies, "550px")}</Slider>
       ) : (
-        <Slider {...settings1}>{renderCardPhim(arrayMovies)}</Slider>
+        <Slider {...settings1}>
+          {renderCardPhim(arrayMovies, vw < 769 ? "250px" : "320px")}
+        </Slider>
       )}
     </>
   );

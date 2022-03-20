@@ -8,6 +8,7 @@ if (localStorage.getItem("userLogin")) {
 const stateDefault = {
   userLogin: nameLogin,
   reDirect: false,
+  gridView: false,
 };
 
 export const UserReducer = (state = stateDefault, action) => {
@@ -22,7 +23,12 @@ export const UserReducer = (state = stateDefault, action) => {
       state.reDirect = false;
       return { ...state };
     }
-
+    case "SET_GRID_VIEW": {
+      const { gridView } = state;
+      // console.log(gridView);
+      state.gridView = !gridView;
+      return { ...state };
+    }
     default: {
       return { ...state };
     }

@@ -6,6 +6,7 @@ import {
   RefreshContent,
 } from "react-js-pull-to-refresh";
 import { useDispatch } from "react-redux";
+import ButtonGrid from "../../Components/ButtonGrid/ButtonGrid";
 import Carousel from "../../Components/Carousel/Carousel";
 import FilmBlock from "../../Components/FilmBlock/FilmBlock";
 import Footer from "../../Components/Footer/Footer";
@@ -31,7 +32,11 @@ export default function Home() {
         <div id="basic-container">
           <Header />
           <Carousel />
+
+          <ButtonGrid />
+
           <FilmBlock />
+
           <Footer />
         </div>
         <style>{`

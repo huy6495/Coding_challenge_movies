@@ -2,16 +2,16 @@ import axios from "axios";
 import convertArrayMovies from "../../Helper/convertArrayMovies";
 import { api_key, DOMAIN, IMAGE_DOMAIN } from "../../Utils/setting";
 
-//All actions of app will be expressed here, with reduxThunk, components can dispatch these function to reducer
-
 //Get list movies ...
-export const getListMovies = (page = 1) => {
+export const getListMovies = (kind = "now_playing", page = 1) => {
   return async (dispatch) => {
     try {
       const result = await axios({
         method: "GET",
-        url: `${DOMAIN}now_playing?api_key=${api_key}&language=en-US&page=${page}`,
+        url: `${DOMAIN + kind}?api_key=${api_key}&language=en-US&page=${page}`,
       });
+      // console.log(result.data);
+
       if (result.status !== 200) throw new Error("Internet disconnected!");
 
       const arrayMovie = await convertArrayMovies(result.data.results);
@@ -23,6 +23,8 @@ export const getListMovies = (page = 1) => {
 
       await dispatch({ type: "HIDE_LOADING_LIST" });
     } catch (err) {
+      console.log(err);
+
       if (err) {
         alert(err);
         console.log(err);
@@ -40,6 +42,7 @@ export const getDetailMovie = (productID = 550) => {
         method: "GET",
         url: `${DOMAIN}${productID}?api_key=${api_key}`,
       });
+      if (result.status !== 200) throw new Error("Internet disconnected!");
 
       const detailMovie = await result.data;
       let { backdrop_path } = await detailMovie;
@@ -53,10 +56,11 @@ export const getDetailMovie = (productID = 550) => {
 
       await dispatch({ type: "HIDE_LOADING_DETAIL" });
     } catch (err) {
-      if (err.message === "Network Error") {
-        alert("Internet disconnected");
+      if (err) {
+        alert(err);
+        console.log(err);
+        return;
       }
-      console.log(err);
     }
   };
 };

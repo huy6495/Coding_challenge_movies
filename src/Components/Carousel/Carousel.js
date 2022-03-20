@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import React from "react";
 import SearchBox from "../SearchBox/SearchBox";
 import "./_carousel.scss";

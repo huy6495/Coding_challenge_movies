@@ -49,9 +49,6 @@ export default function FilmBlock() {
           <div className="tab-pane fade show active">
             <SlickCarousel />
           </div>
-          <div className="tab-pane fade">
-            <SlickCarousel />
-          </div>
         </div>
       </div>
     </div>

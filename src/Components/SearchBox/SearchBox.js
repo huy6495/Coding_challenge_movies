@@ -34,7 +34,10 @@ export default function SearchBox() {
       className="wrap-search d-flex justify-content-center"
     >
       <div className="d-flex justify-content-center wrap-search-in">
-        <form className="d-flex justify-content-center">
+        <form
+          className="d-flex justify-content-center"
+          onSubmit={(e) => e.preventDefault()}
+        >
           {/* 1. */}
           <div className="form-group form-search-first d-flex">
             <div className="p-2 pr-5 align-self-center text-left position-relative">

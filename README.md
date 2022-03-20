@@ -35,7 +35,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-> https://thumbs.gfycat.com/VainTinyKestrel-size_restricted.gif
+> ![](https://thumbs.gfycat.com/VainTinyKestrel-size_restricted.gif)
 
 ## License
 

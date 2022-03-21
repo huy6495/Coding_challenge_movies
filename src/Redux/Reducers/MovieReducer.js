@@ -13,11 +13,19 @@ const initialState = {
 export const MovieReducer = (state = initialState, action) => {
   switch (action.type) {
     case "SET_LIST_MOVIE": {
-      return { ...state, arrayMovies: action.arrayMovies };
+      state.arrayMovies = action.arrayMovies;
+      state.isLoadingSlider = false;
+      return {
+        ...state,
+      };
     }
 
     case "SET_DETAIL_MOVIE": {
-      return { ...state, detailMovie: action.detailMovie };
+      state.isLoadingDetail = false;
+      state.detailMovie = action.detailMovie;
+      return {
+        ...state,
+      };
     }
 
     case "HIDE_LOADING_DETAIL": {

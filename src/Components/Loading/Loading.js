@@ -1,10 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./_loading.scss";
 
 export default function Loading(props) {
-  useEffect(() => {
-    return () => {};
-  }, []);
   return (
     <div className="text-center">
       <div className="wrap-loading">

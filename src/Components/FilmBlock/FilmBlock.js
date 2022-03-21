@@ -10,8 +10,8 @@ export default function FilmBlock() {
 
   const handleTopRated = async (kind) => {
     try {
-      await setTopRate(!top_rated);
       await dispatch(getListMovies(kind));
+      setTopRate(!top_rated);
     } catch (err) {
       console.log(err);
     }

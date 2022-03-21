@@ -10,7 +10,6 @@ export const getListMovies = (kind = "now_playing", page = 1) => {
         method: "GET",
         url: `${DOMAIN + kind}?api_key=${api_key}&language=en-US&page=${page}`,
       });
-      // console.log(result.data);
 
       if (result.status !== 200) throw new Error("Internet disconnected!");
 
@@ -20,8 +19,6 @@ export const getListMovies = (kind = "now_playing", page = 1) => {
         type: "SET_LIST_MOVIE",
         arrayMovies: arrayMovie,
       });
-
-      await dispatch({ type: "HIDE_LOADING_LIST" });
     } catch (err) {
       console.log(err);
 
@@ -53,8 +50,6 @@ export const getDetailMovie = (productID = 550) => {
         type: "SET_DETAIL_MOVIE",
         detailMovie: detailMovie,
       });
-
-      await dispatch({ type: "HIDE_LOADING_DETAIL" });
     } catch (err) {
       if (err) {
         alert(err);

@@ -12,7 +12,7 @@ export default function Detail(props) {
   );
   const { id } = props;
 
-  //   console.log(isLoadingDetail);
+  console.log(isLoadingDetail);
 
   const dispatch = useDispatch();
 

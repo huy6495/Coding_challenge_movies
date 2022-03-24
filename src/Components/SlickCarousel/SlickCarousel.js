@@ -20,7 +20,7 @@ function SlickCarousel(props) {
     const action = getListMovies();
     dispatch(action);
     return () => {};
-  }, [isLoadingSlider]);
+  }, []);
 
   return (
     <div style={{ maxHeight: "760px" }}>

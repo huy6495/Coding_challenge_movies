@@ -5,19 +5,26 @@ import {
   ReleaseContent,
   RefreshContent,
 } from "react-js-pull-to-refresh";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ButtonGrid from "../../Components/ButtonGrid/ButtonGrid";
+import ButtonSwitch from "../../Components/ButtonSwitch/ButtonSwitch";
 import Carousel from "../../Components/Carousel/Carousel";
 import FilmBlock from "../../Components/FilmBlock/FilmBlock";
 import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
 import ToTopBtn from "../../Components/ToTopBnt/ToTopBtn";
+import { getListMovies } from "../../Redux/Actions/MovieActions";
 
 export default function Home() {
+  const { top_rated } = useSelector((state) => state.MovieReducer);
   const dispatch = useDispatch();
 
   const onRefresh = async () => {
-    return await dispatch({ type: "REFRESH_LIST" });
+    if (top_rated) {
+      return await dispatch(getListMovies("top_rated"));
+    } else {
+      return await dispatch(getListMovies());
+    }
   };
   return (
     <div style={{ overflow: "scroll" }}>

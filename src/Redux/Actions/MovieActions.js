@@ -6,6 +6,8 @@ import { api_key, DOMAIN, IMAGE_DOMAIN } from "../../Utils/setting";
 export const getListMovies = (kind = "now_playing", page = 1) => {
   return async (dispatch) => {
     try {
+      await dispatch({ type: "DISPLAY_LOADING" });
+
       const result = await axios({
         method: "GET",
         url: `${DOMAIN + kind}?api_key=${api_key}&language=en-US&page=${page}`,
@@ -19,6 +21,8 @@ export const getListMovies = (kind = "now_playing", page = 1) => {
         type: "SET_LIST_MOVIE",
         arrayMovies: arrayMovie,
       });
+
+      await setTimeout(() => dispatch({ type: "HIDE_LOADING_LIST" }), 2000);
     } catch (err) {
       console.log(err);
 

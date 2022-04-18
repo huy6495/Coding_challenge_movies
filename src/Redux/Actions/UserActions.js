@@ -6,6 +6,7 @@ export const searchMovie = (param) => {
   return async (dispatch) => {
     try {
       // await console.log(param);
+
       const result = await axios({
         url: `${SEARCH_DOMAIN}movie?api_key=${api_key}&language=en-US&query=${param}&page=1`,
         method: "GET",

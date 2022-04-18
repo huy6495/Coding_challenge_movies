@@ -28,6 +28,7 @@ export default function SearchBox() {
     }
     return "";
   };
+
   return (
     <div
       id="searchMovies"
